@@ -1,10 +1,5 @@
-<!doctype html>
-<html>
-	<head>
-	</head>
-	<body>
+<% include top %>
 		<% posts.forEach(function(post) {%>
 			<div><%=post.name%></div>
 		<%}); %>
-	</body>
-</html>
+<% include bottom %>
