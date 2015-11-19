@@ -1,0 +1,18 @@
+{
+  "name": "lecture18",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+  	"express":"*",
+  	"body-parser":"*",
+    "morgan":"*",
+    "express-session":"*",
+    "cookie-parser":"*"
+  	},
+  "author": "",
+  "license": "ISC"
+}
