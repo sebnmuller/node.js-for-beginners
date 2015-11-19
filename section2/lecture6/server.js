@@ -8,13 +8,13 @@ server.on('request', function(request, response) {
 	console.log(incomingUrl);
 	
 	if(incomingUrl.path === '/hello') {
-		response.writeHead(200, {'Contet-Type':'text/plain'});
+		response.writeHead(200, {'Content-Type':'text/plain'});
 		response.end('Hello World');	
 	} else if (incomingUrl.path === '/goodbye') {
-		response.writeHead(200, {'Contet-Type':'text/plain'});
+		response.writeHead(200, {'Content-Type':'text/plain'});
 		response.end('Goodbye World');
 	} else {
-		response.writeHead(404, {'Contet-Type':'text/plain'});
+		response.writeHead(404, {'Content-Type':'text/plain'});
 		response.end('Resource not found');
 	}
 	
