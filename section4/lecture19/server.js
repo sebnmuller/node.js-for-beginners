@@ -3,7 +3,7 @@ var express = require('express'),
 	bodyParser = require('body-parser'),
 	morgan = require('morgan'),
 	cookieParser = require('cookie-parser'),
-	session = require('express-session')
+	session = require('express-session'),
 	port = process.env.PORT || 8080;
 
 app.use(cookieParser());
