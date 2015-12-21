@@ -3,7 +3,8 @@ var express = require('express'),
   bodyParser = require('body-parser'),
   morgan = require('morgan'),
   port = process.env.PORT || 8080,
-  MongoClient = require('mongodb').MongoClient
+  mongodb = require('mongodb'),
+  MongoClient = mongodb.MongoClient
 
 app.use(bodyParser.urlencoded({
   extended: true
@@ -33,11 +34,24 @@ MongoClient.connect('mongodb://localhost:27017/myExample', function(err, db) {
       console.log(docs)
       res.redirect('/members')
     })
+  }
 
+  var deleteMember = function(req, res) {
+    console.log(req.query)
+    collection.remove( {
+      '_id': new mongodb.ObjectID(req.query.member),
+      function(err, results) {
+        if(err) return console.log(err)
+        console.log(results)
+        res.redirect('/members')
+      }
+    })
+    res.redirect('/members')
   }
 
   app.get('/members', index) //list all members
   app.post('/members', addMember) //add a new member
+  app.get('/delete', deleteMember) //remove an existing member
 
   app.listen(port, function(err) {
     console.log('listening on %s', port);

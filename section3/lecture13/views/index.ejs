@@ -1,6 +1,11 @@
 <a href="/new.html">New</a>
-<ul>
+<form action="/delete" >
+<table>
   <% members.forEach(function(member) { %>
-    <li><%=member.name%></li>
+    <tr>
+      <td><%=member.name%></td>
+      <td><button type="submit" name="member" value="<%=member._id%>">Delete</button></td>
+    </tr>
   <% }) %>
-</ul>
+</table>
+</form>
