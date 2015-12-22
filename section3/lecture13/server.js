@@ -30,7 +30,7 @@ MongoClient.connect('mongodb://localhost:27017/myExample', function(err, db) {
 
   var addMember = function(req, res) {
     collection.insert(req.body, function(err, docs) {
-      if(err) console.log(err)
+      if(err) return console.log(err)
       console.log(docs)
       res.redirect('/members')
     })
